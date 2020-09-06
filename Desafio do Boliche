@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    int rodadas=2;
+    int resultado=0;
+    Scanner teclado = new Scanner (System.in);
+    for(int i=0;i<rodadas;i++) {
+      System.out.println("\nQntos pinos derrubou na primeira tentativa?:");
+      int primeiraTentativa = teclado.nextInt();
+      System.out.println("Quantos pinos  derrubou na segunda tentativa?:");
+      int segundaTentativa = teclado.nextInt();
+      if(primeiraTentativa==10) {
+        System.out.println("STRIKE!!");
+      }
+      else if(primeiraTentativa+segundaTentativa==10) {
+        System.out.println("SPARE!!");
+      } else if (primeiraTentativa+segundaTentativa==0) {
+        System.out.println("PONTUAÇAO ZERADA");
+      }
+      resultado=10*(primeiraTentativa+segundaTentativa);
+      System.out.print("O resultado foi de  "+resultado+" Pontos ");
+    }
+  }
+}
